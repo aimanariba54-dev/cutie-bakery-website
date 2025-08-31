@@ -8,164 +8,91 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff4d4d, #4da6ff, #ffd633);
-      animation: gradientBG 8s infinite alternate;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
       color: #333;
     }
 
-    @keyframes gradientBG {
-      0% { background: linear-gradient(135deg, #ff4d4d, #4da6ff, #ffd633); }
-      50% { background: linear-gradient(135deg, #ff99cc, #33ccff, #ffff66); }
-      100% { background: linear-gradient(135deg, #ff6600, #0099ff, #ffcc00); }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
       text-align: center;
-      color: white;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 8px #000;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ffd633; }
-      to { text-shadow: 0 0 20px #4da6ff, 0 0 40px #ffcc00; }
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      background: rgba(0,0,0,0.6);
-      padding: 15px;
-      border-bottom: 3px solid yellow;
-    }
-
-    nav a {
-      color: #fff;
-      font-weight: bold;
-      font-size: 18px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd633;
-      transform: scale(1.2);
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
       padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      border-bottom: 3px solid #ff7eb3;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #d63384;
     }
 
-    .product-card {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
     }
-
-    .product-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-    }
-
-    .product-card img {
-      max-width: 100%;
+    .gallery img {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 15px;
-      transition: transform 0.4s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
     }
-
-    .product-card:hover img {
-      transform: rotate(-3deg) scale(1.05);
-    }
-
-    .product-card h3 {
-      margin: 15px 0;
-      color: #ff3333;
-      font-size: 22px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      color: #004080;
-    }
-
-    .order-btn {
-      margin-top: 15px;
-      display: inline-block;
-      padding: 12px 22px;
-      background: linear-gradient(to right, #ff4d4d, #ffd633, #4da6ff);
-      color: white;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.4s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .order-btn:hover {
-      background: linear-gradient(to right, #4da6ff, #ff4d4d, #ffd633);
+    .gallery img:hover {
       transform: scale(1.1);
     }
 
-    footer {
-      background: rgba(0,0,0,0.7);
+    .price {
       text-align: center;
-      color: #ffd633;
-      padding: 18px;
-      margin-top: 40px;
-      font-weight: bold;
       font-size: 18px;
-      border-top: 3px solid red;
+      margin-top: 10px;
+      color: #222;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.7);
+      border-top: 3px solid #ff7eb3;
     }
   </style>
 </head>
 <body>
-  <header>🎂 Welcome to Cutie Bakery 🎂</header>
+  <header>
+    <h1>🍰 Welcome to Cutie Bakery 🧁</h1>
+    <p>Fresh Cakes, Cute Cupcakes & Yummy Treats!</p>
+  </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Menu</a>
-    <a href="#">Order</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <section class="products">
-    <div class="product-card">
-      <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Chocolate Cake">
-      <h3>Chocolate Cake</h3>
-      <p class="price">₹500</p>
-      <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Chocolate%20Cake" class="order-btn">🍰 Order Now</a>
+  <section class="gallery">
+    <div>
+      <img src="https://images.unsplash.com/photo-1605478371361-2e7f18498399?auto=format&fit=crop&w=600&q=80" alt="Cake">
+      <div class="price">Chocolate Cake - ₹450</div>
     </div>
-
-    <div class="product-card">
-      <img src="https://i.imgur.com/UYiroys.jpg" alt="Strawberry Pastry">
-      <h3>Strawberry Pastry</h3>
-      <p class="price">₹120</p>
-      <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Strawberry%20Pastry" class="order-btn">🍓 Order Now</a>
+    <div>
+      <img src="https://images.unsplash.com/photo-1605806616949-1e4691c2e45d?auto=format&fit=crop&w=600&q=80" alt="Cupcake">
+      <div class="price">Vanilla Cupcake - ₹60</div>
     </div>
-
-    <div class="product-card">
-      <img src="https://i.imgur.com/yXOvdOS.jpg" alt="Cupcakes">
-      <h3>Rainbow Cupcakes</h3>
-      <p class="price">₹250</p>
-      <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Cupcakes" class="order-btn">🧁 Order Now</a>
+    <div>
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cake">
+      <div class="price">Strawberry Cake - ₹500</div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1629384064669-87f5d53295d1?auto=format&fit=crop&w=600&q=80" alt="Cupcake">
+      <div class="price">Chocolate Cupcake - ₹70</div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Cutie Bakery | Made with ❤️ by Ariba
+    <p>📞 Contact us: 98765-43210 | 📧 cutiebakery@gmail.com</p>
   </footer>
 </body>
 </html>
