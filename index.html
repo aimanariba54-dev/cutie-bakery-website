@@ -5,36 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cutie Bakery 🍰</title>
 <style>
-body { font-family: Arial; margin:0; padding:0; background:linear-gradient(to bottom,#fff0f5,#ffe4e1,#fff0f5); color:#333; }
-header { background:linear-gradient(90deg,#ff6f61,#ffcc70,#ff9a8b,#ffd1dc); color:white; padding:25px 20px; text-align:center; border-bottom-left-radius:20px; border-bottom-right-radius:20px; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
-header h1 { font-family: 'Comic Sans MS', cursive; font-size:2.5rem; margin:0; }
-header nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:1.1rem; transition:0.3s; }
-header nav a:hover { transform:scale(1.1); color:#fff7e6; }
+body {
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4e1, #fff0f5);
+    color:#333;
+}
 
-.hero-section { text-align:center; padding:40px 20px; }
-.hero-section h2 { font-size:2rem; margin-bottom:10px; }
-.hero-section p { font-size:1.2rem; margin-bottom:20px; }
-.hero-img { width:300px; border-radius:10px; margin-top:20px; }
-.order-btn { display:inline-block; background: linear-gradient(45deg,#ff6f61,#ffcc70,#ff9a8b); color:white; padding:12px 25px; border-radius:50px; font-weight:bold; text-decoration:none; transition: transform 0.3s, box-shadow 0.3s; }
-.order-btn:hover { transform:scale(1.1); box-shadow:0 6px 15px rgba(0,0,0,0.3); }
+/* Header */
+header {
+    background: linear-gradient(90deg,#ff6f61,#ffcc70,#ff9a8b,#ffd1dc);
+    color:white; padding:25px 20px;
+    text-align:center;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+header h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size:2.5rem;
+    margin:0;
+}
+header nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1.1rem;
+    transition:0.3s;
+}
+header nav a:hover {
+    color:#fff7e6;
+    transform:scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align:center;
+    padding:40px 20px;
+}
+.hero-section h2 {
+    font-size:2rem;
+    margin-bottom:10px;
+}
+.hero-section p {
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+.hero-img {
+    width:300px;
+    border-radius:10px;
+    margin-top:20px;
+}
+.order-btn {
+    display:inline-block;
+    background: linear-gradient(45deg, #ff6f61, #ffcc70, #ff9a8b);
+    color:white;
+    padding:12px 25px;
+    margin-top:20px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.order-btn:hover {
+    transform:scale(1.1);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
 
 /* Products Section */
-#products { padding:40px 20px; text-align:center; }
-#products h2 { font-size:2rem; margin-bottom:20px; color:#ff3b2e; text-shadow:2px 2px #ffd1dc; }
-.product-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; padding:20px; }
-.product { background:linear-gradient(135deg,#ff9a8b,#ffd1dc); padding:15px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s; }
-.product:hover { transform:scale(1.05); box-shadow:0 12px 20px rgba(0,0,0,0.3); }
-.product img { width:100%; border-radius:15px; }
-.product h3 { color:white; text-shadow:1px 1px #ff6f61; }
-.product p { color:white; font-weight:bold; margin:5px 0; }
+#products {
+    padding:40px 20px;
+    text-align:center;
+}
+#products h2 {
+    font-size:2.5rem;
+    margin-bottom:30px;
+    color:#ff3b2e;
+    text-shadow:2px 2px #ffd1dc;
+}
+.product-list {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:0 20px;
+}
+.product {
+    background:linear-gradient(135deg,#ff9a8b,#ffd1dc);
+    padding:20px;
+    border-radius:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.3s;
+}
+.product:hover {
+    transform:scale(1.05);
+    box-shadow:0 12px 20px rgba(0,0,0,0.3);
+}
+.product img {
+    width:100%;
+    border-radius:20px;
+    margin-bottom:10px;
+}
+.product h3 {
+    color:white;
+    text-shadow:1px 1px #ff6f61;
+}
+.product p {
+    color:white;
+    font-weight:bold;
+    margin:5px 0;
+}
 
-/* Contact */
-#contact { background:#ffefeb; padding:40px 20px; border-radius:20px; margin:40px auto; max-width:800px; text-align:center; }
-#contact h2 { font-size:2rem; margin-bottom:20px; }
-#contact p { font-size:1.2rem; margin:10px 0; }
+/* Contact Section */
+#contact {
+    background:#ffefeb;
+    padding:40px 20px;
+    border-radius:20px;
+    margin:40px auto;
+    max-width:800px;
+    text-align:center;
+}
+#contact h2 {
+    font-size:2rem;
+    margin-bottom:20px;
+}
+#contact p {
+    font-size:1.2rem;
+    margin:10px 0;
+}
 
 /* Footer */
-footer { background:#ff6f61; color:white; text-align:center; padding:20px; }
+footer {
+    background:#ff6f61;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
 </style>
 </head>
 <body>
@@ -116,7 +223,7 @@ footer { background:#ff6f61; color:white; text-align:center; padding:20px; }
 <section id="contact">
 <h2>Contact Us 📞</h2>
 <p>Email: aimanariba54@gmail.com</p>
-<p>Phone: +91 9326613751</p>
+<p>Phone: +91 9322613571</p>
 <p>We’re always happy to hear from you! 💌</p>
 </section>
 
@@ -126,4 +233,3 @@ footer { background:#ff6f61; color:white; text-align:center; padding:20px; }
 
 </body>
 </html>
-
