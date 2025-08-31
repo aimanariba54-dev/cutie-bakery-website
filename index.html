@@ -8,27 +8,21 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a1c4fd, #c2e9fb);
-      background-size: 400% 400%;
-      animation: gradient 12s ease infinite;
-      color: #333;
-    }
-
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      background: url('https://images.unsplash.com/photo-1605478371361-2e7f18498399?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
 
     header {
       text-align: center;
       padding: 30px;
-      background: rgba(255, 255, 255, 0.7);
-      border-bottom: 3px solid #ff7eb3;
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 3px solid #ffcccb;
     }
     header h1 {
       font-size: 2.5rem;
-      color: #d63384;
+      color: #ffeb3b;
+      text-shadow: 2px 2px #000;
     }
 
     .gallery {
@@ -43,7 +37,7 @@
       height: 200px;
       object-fit: cover;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       transition: transform 0.3s;
     }
     .gallery img:hover {
@@ -54,45 +48,46 @@
       text-align: center;
       font-size: 18px;
       margin-top: 10px;
-      color: #222;
+      color: #fff;
       font-weight: bold;
+      text-shadow: 1px 1px #000;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(255,255,255,0.7);
-      border-top: 3px solid #ff7eb3;
+      background: rgba(0,0,0,0.6);
+      border-top: 3px solid #ffcccb;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🍰 Welcome to Cutie Bakery 🧁</h1>
-    <p>Fresh Cakes, Cute Cupcakes & Yummy Treats!</p>
+    <h1>🎂 Cutie Bakery 🧁</h1>
+    <p>Delicious Cakes & Cupcakes Wallpapers!</p>
   </header>
 
   <section class="gallery">
     <div>
-      <img src="https://images.unsplash.com/photo-1605478371361-2e7f18498399?auto=format&fit=crop&w=600&q=80" alt="Cake">
-      <div class="price">Chocolate Cake - ₹450</div>
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cake">
+      <div class="price">Strawberry Cake - ₹500</div>
     </div>
     <div>
       <img src="https://images.unsplash.com/photo-1605806616949-1e4691c2e45d?auto=format&fit=crop&w=600&q=80" alt="Cupcake">
       <div class="price">Vanilla Cupcake - ₹60</div>
     </div>
     <div>
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cake">
-      <div class="price">Strawberry Cake - ₹500</div>
-    </div>
-    <div>
       <img src="https://images.unsplash.com/photo-1629384064669-87f5d53295d1?auto=format&fit=crop&w=600&q=80" alt="Cupcake">
       <div class="price">Chocolate Cupcake - ₹70</div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1620987447489-934e2d0bbd10?auto=format&fit=crop&w=600&q=80" alt="Cake">
+      <div class="price">Rainbow Cake - ₹650</div>
     </div>
   </section>
 
   <footer>
-    <p>📞 Contact us: 98765-43210 | 📧 cutiebakery@gmail.com</p>
+    <p>📞 98765-43210 | 📧 cutiebakery@gmail.com</p>
   </footer>
 </body>
 </html>
