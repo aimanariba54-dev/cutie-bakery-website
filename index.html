@@ -1,51 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutie Bakery 🍰</title>
+<style>
+body { font-family: Arial; margin:0; padding:0; background:linear-gradient(to bottom,#fff0f5,#ffe4e1,#fff0f5); color:#333; }
+header { background:linear-gradient(90deg,#ff6f61,#ffcc70,#ff9a8b,#ffd1dc); color:white; padding:25px 20px; text-align:center; border-bottom-left-radius:20px; border-bottom-right-radius:20px; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+header h1 { font-family: 'Comic Sans MS', cursive; font-size:2.5rem; margin:0; }
+header nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:1.1rem; transition:0.3s; }
+header nav a:hover { transform:scale(1.1); color:#fff7e6; }
+
+.hero-section { text-align:center; padding:40px 20px; }
+.hero-section h2 { font-size:2rem; margin-bottom:10px; }
+.hero-section p { font-size:1.2rem; margin-bottom:20px; }
+.hero-img { width:300px; border-radius:10px; margin-top:20px; }
+.order-btn { display:inline-block; background: linear-gradient(45deg,#ff6f61,#ffcc70,#ff9a8b); color:white; padding:12px 25px; border-radius:50px; font-weight:bold; text-decoration:none; transition: transform 0.3s, box-shadow 0.3s; }
+.order-btn:hover { transform:scale(1.1); box-shadow:0 6px 15px rgba(0,0,0,0.3); }
+
+/* Products Section */
+#products { padding:40px 20px; text-align:center; }
+#products h2 { font-size:2rem; margin-bottom:20px; color:#ff3b2e; text-shadow:2px 2px #ffd1dc; }
+.product-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; padding:20px; }
+.product { background:linear-gradient(135deg,#ff9a8b,#ffd1dc); padding:15px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s; }
+.product:hover { transform:scale(1.05); box-shadow:0 12px 20px rgba(0,0,0,0.3); }
+.product img { width:100%; border-radius:15px; }
+.product h3 { color:white; text-shadow:1px 1px #ff6f61; }
+.product p { color:white; font-weight:bold; margin:5px 0; }
+
+/* Contact */
+#contact { background:#ffefeb; padding:40px 20px; border-radius:20px; margin:40px auto; max-width:800px; text-align:center; }
+#contact h2 { font-size:2rem; margin-bottom:20px; }
+#contact p { font-size:1.2rem; margin:10px 0; }
+
+/* Footer */
+footer { background:#ff6f61; color:white; text-align:center; padding:20px; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>🍰 Cutie Bakery 🍩</h1>
+<nav><a href="#home">Home</a> <a href="#products">Menu</a> <a href="#contact">Contact</a></nav>
+</header>
+
+<section id="home" class="hero-section">
+<h2>Welcome to Cutie Bakery!</h2>
+<p>Delicious cakes, cupcakes, and treats made with love.</p>
+<img src="https://images.unsplash.com/photo-1608136063375-7f57d1a8f0d2" alt="Bakery cakes" class="hero-img">
+<br>
+<a href="#products" class="order-btn">Order Now</a>
+</section>
+
 <section id="products">
-<h2 style="font-size:2.5rem; color:#ff3b2e; text-align:center; margin-bottom:30px; text-shadow:2px 2px #ffd1dc;">Our Delicious Menu 🍰</h2>
-<div class="product-list" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; padding:0 20px;">
-  
-  <div class="product" style="background:linear-gradient(135deg,#ff9a8b,#ffd1dc); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1606755962776-22b9b44e2d14" alt="Cupcakes" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff6f61;">Cupcakes (Chocolate & Vanilla)</h3>
-  </div>
-  
-  <div class="product" style="background:linear-gradient(135deg,#fdd6a2,#ffcc70); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1600185365487-8ab0b0c18fc4" alt="Pizza" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff6f61;">Pizza</h3>
-  </div>
-  
-  <div class="product" style="background:linear-gradient(135deg,#ffb3ba,#ff6f61); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1589308078050-6b9e30ff2ef4" alt="Chocolate Cake" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff3b2e;">Chocolate Cake</h3>
-  </div>
-  
-  <div class="product" style="background:linear-gradient(135deg,#ffdac1,#ffb347); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1565958011706-44c5f1f192a2" alt="Strawberry Cake" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff6f61;">Strawberry Cake</h3>
-  </div>
+<h2>Our Menu 🍰</h2>
+<div class="product-list">
 
-  <div class="product" style="background:linear-gradient(135deg,#c1ffd7,#70ffcc); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1599785209707-1b9ed5efc59b" alt="Pineapple Cake" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #3bff6f;">Pineapple Cake</h3>
-  </div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1606755962776-22b9b44e2d14" alt="Cupcakes">
+<h3>Cupcakes</h3>
+<p>Chocolate & Vanilla - ₹150</p>
+</div>
 
-  <div class="product" style="background:linear-gradient(135deg,#d1c4ff,#9c8fff); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1622309356908-23d1f9a6c0f3" alt="Marble Cake" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #6f3bff;">Marble Cake</h3>
-  </div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1589308078050-6b9e30ff2ef4" alt="Chocolate Cake">
+<h3>Chocolate Cake</h3>
+<p>₹500</p>
+</div>
 
-  <div class="product" style="background:linear-gradient(135deg,#ffeadb,#ffb347); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1599785209707-1b9ed5efc59b" alt="Choco Lava Cake" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff6f3b;">Choco Lava Cake</h3>
-  </div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1565958011706-44c5f1f192a2" alt="Strawberry Cake">
+<h3>Strawberry Cake</h3>
+<p>₹550</p>
+</div>
 
-  <div class="product" style="background:linear-gradient(135deg,#ffb3ba,#ff6f61); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1600185365487-8ab0b0c18fc4" alt="Cookies" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff3b2e;">Cookies</h3>
-  </div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1599785209707-1b9ed5efc59b" alt="Pineapple Cake">
+<h3>Pineapple Cake</h3>
+<p>₹500</p>
+</div>
 
-  <div class="product" style="background:linear-gradient(135deg,#ffe0f0,#ff9a8b); padding:20px; border-radius:25px; box-shadow:0 8px 20px rgba(0,0,0,0.2); text-align:center; transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1606755962776-22b9b44e2d14" alt="Chocolate Donuts Nutella" style="width:100%; border-radius:20px; margin-bottom:10px;">
-    <h3 style="color:#fff; text-shadow:1px 1px #ff3b2e;">Chocolate Donuts Nutella</h3>
-  </div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1622309356908-23d1f9a6c0f3" alt="Marble Cake">
+<h3>Marble Cake</h3>
+<p>₹520</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1600185365487-8ab0b0c18fc4" alt="Cookies">
+<h3>Cookies</h3>
+<p>₹50 per piece</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1606755962776-22b9b44e2d14" alt="Choco Lava Cake">
+<h3>Choco Lava Cake</h3>
+<p>₹450</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1600185365487-8ab0b0c18fc4" alt="Chocolate Donuts Nutella">
+<h3>Chocolate Donuts Nutella</h3>
+<p>₹100 each</p>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1600185365487-8ab0b0c18fc4" alt="Pizza">
+<h3>Pizza</h3>
+<p>₹350</p>
+</div>
 
 </div>
 </section>
+
+<section id="contact">
+<h2>Contact Us 📞</h2>
+<p>Email: yourbakeryemail@example.com</p>
+<p>Phone: +91 12345 67890</p>
+<p>We’re always happy to hear from you! 💌</p>
+</section>
+
+<footer>
+<p>© 2025 Cutie Bakery. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
