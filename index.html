@@ -1,236 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cutie Bakery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',sans-serif;background:#fffafc;color:#333;line-height:1.4}
-
-    /* NAV */
-    nav{
-      background:linear-gradient(90deg,#ff6384,#ff3c78);
-      color:#fff;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08)
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f5;
+      color: #333;
+      scroll-behavior: smooth;
     }
-    nav .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.2rem}
-    nav ul{list-style:none;display:flex;gap:18px}
-    nav a{color:#fff;text-decoration:none;font-weight:600}
-
-    /* HERO */
-    .hero{
-      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
-      box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.06)
+    header {
+      background: linear-gradient(90deg, #ff6b6b, #ffb347);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .hero .wrap{max-width:980px;padding:20px}
-    .hero h1{font-size:2.6rem;margin-bottom:12px;text-shadow:0 6px 18px rgba(0,0,0,0.35)}
-    .hero p{font-size:1.05rem;opacity:0.95}
-
-    /* PRODUCTS */
-    #products{max-width:1200px;margin:50px auto;padding:0 18px}
-    #products h2{text-align:center;color:#ff3c78;font-size:2rem;margin-bottom:28px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-    .card{
-      background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(12,12,30,0.06);
-      transition:transform .35s ease,box-shadow .35s ease;
-      display:flex;flex-direction:column;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
     }
-    .card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(12,12,30,0.12)}
-    .card img{width:100%;height:180px;object-fit:cover}
-    .card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
-    .card-body h3{font-size:1.2rem;margin-bottom:8px;color:#222}
-    .card-body p{color:#666;font-size:0.98rem;margin-bottom:12px}
-    .price-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .price{font-weight:700;color:#ff3c78}
-    .btn-order{
-      background:linear-gradient(90deg,#ff6384,#ff3c78);color:#fff;padding:8px 12px;border-radius:10px;
-      text-decoration:none;font-weight:700;display:inline-block;
-      box-shadow:0 6px 18px rgba(255,60,120,0.18)
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
     }
-
-    /* CONTACT */
-    #contact{background:linear-gradient(135deg,#fff0f5,#fff8e6);padding:60px 20px;margin:40px auto;border-radius:16px;max-width:1000px}
-    #contact .wrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-    .contact-left{flex:1;min-width:260px}
-    .contact-left h2{color:#ff3c78;font-size:1.8rem;margin-bottom:10px}
-    .contact-left p{color:#444;margin-bottom:8px;font-weight:600}
-    .contact-actions{margin-top:12px}
-    .contact-actions a{display:inline-block;margin-right:12px;padding:10px 18px;border-radius:999px;text-decoration:none;color:#fff;font-weight:700}
-    .whatsapp{background:linear-gradient(90deg,#25D366,#128C7E)}
-    .email{background:linear-gradient(90deg,#ff3c78,#e23366)}
-
-    .contact-right{flex:1;min-width:260px}
-    .items-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px}
-    .mini{background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center}
-    .mini img{width:70px;height:70px;object-fit:contain;margin-bottom:8px}
-    .mini p{font-weight:600;color:#444}
-
-    /* FOOTER */
-    footer{text-align:center;padding:18px;color:#777;font-size:.95rem;margin-top:30px}
-
-    /* Responsive tweaks */
-    @media (max-width:640px){
-      .hero h1{font-size:1.6rem}
-      nav ul{display:none}
-      .contact-left,.contact-right{width:100%}
-      .card img{height:150px}
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1607083206173-56a8f8f7dc85?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 10px #000;
+      font-size: 42px;
+      font-weight: bold;
+      background-attachment: fixed; /* parallax */
+    }
+    .offer {
+      background: #ff6b6b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0% {opacity: 1;}
+      50% {opacity: 0.6;}
+      100% {opacity: 1;}
+    }
+    .products {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .products h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #ff6b6b;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px 0 5px;
+      color: #ff6b6b;
+    }
+    .card p {
+      margin-bottom: 15px;
+    }
+    .contact {
+      background: #ffe5e0;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #ff6b6b;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, select, button {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    input, textarea, select {
+      border: 1px solid #ccc;
+    }
+    button {
+      background: linear-gradient(90deg, #ff6b6b, #ffb347);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Floating WhatsApp */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 28px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .whatsapp:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Cutie Bakery</h1>
+    <nav>
+      <a href="#products">Menu</a>
+      <a href="#contact">Order</a>
+    </nav>
+  </header>
 
-  <!-- NAV -->
-  <nav>
-    <div class="brand">🍰 <span>Cutie Bakery</span></div>
-    <ul>
-      <li><a href="#products">Menu</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
   <section class="hero">
-    <div class="wrap">
-      <h1>Freshly Baked Treats — Cakes, Donuts & More</h1>
-      <p>Order custom cakes, cupcakes, brownies and more. Delivery & pickup available.</p>
-    </div>
+    Fresh • Delicious • Homemade
   </section>
 
-  <!-- PRODUCTS -->
-  <section id="products">
+  <div class="offer">🎉 Special Offer: 50% OFF on Cupcakes Today Only!</div>
+
+  <section id="products" class="products">
     <h2>Our Specials</h2>
     <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1606312619349-9c84f47d3df7?auto=format&fit=crop&w=1200&q=80" alt="Cake">
-        <div class="card-body">
-          <div>
-            <h3>Cakes</h3>
-            <p>Handmade celebration cakes with fresh cream & toppings.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹299</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Donuts">
-        <div class="card-body">
-          <div>
-            <h3>Donuts</h3>
-            <p>Soft glazed & filled donuts — perfect for snacking.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹99</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1617196037305-5f35277ebc63?auto=format&fit=crop&w=1200&q=80" alt="Cupcakes">
-        <div class="card-body">
-          <div>
-            <h3>Cupcakes</h3>
-            <p>Mini cupcakes with colorful frostings.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹149</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1603079842301-b4e49963cf3d?auto=format&fit=crop&w=1200&q=80" alt="Pizza">
-        <div class="card-body">
-          <div>
-            <h3>Pizza</h3>
-            <p>Small gourmet pizzas topped with fresh ingredients.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹199</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1620912189865-fbe9caa3f3b5?auto=format&fit=crop&w=1200&q=80" alt="Brownies">
-        <div class="card-body">
-          <div>
-            <h3>Brownies</h3>
-            <p>Fudgy brownies with chocolate chips.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹129</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600986604330-6fbcf78fd6d5?auto=format&fit=crop&w=1200&q=80" alt="Marble Cake">
-        <div class="card-body">
-          <div>
-            <h3>Marble Cake</h3>
-            <p>Classic marble cake with rich swirls.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹349</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1623851019530-bc9b89c0ee1d?auto=format&fit=crop&w=1200&q=80" alt="Cookies">
-        <div class="card-body">
-          <div>
-            <h3>Cookies</h3>
-            <p>Crunchy cookies baked fresh daily.</p>
-          </div>
-          <div class="price-row">
-            <div class="price">₹79</div>
-            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
-          </div>
-        </div>
-      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1603022201853-6e96e6a509a2?auto=format&fit=crop&w=800&q=80"><h3>Chocolate Cake</h3><p>₹499</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"><h3>Donuts</h3><p>₹199</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"><h3>Pizza</h3><p>₹299</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=800&q=80"><h3>Brownies</h3><p>₹249</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"><h3>Marble Cake</h3><p>₹399</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=800&q=80"><h3>Cookies</h3><p>₹149</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1621263764928-4b91bdf232c0?auto=format&fit=crop&w=800&q=80"><h3>Cupcakes</h3><p>₹199</p></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact-left">
-        <h2>Contact Us</h2>
-        <p class="contact-info">📞 +91 91234 56789</p>
-        <p class="contact-info">✉️ mybakery@example.com</p>
-        <div class="contact-actions">
-          <a class="whatsapp" href="https://wa.me/919123456789" target="_blank">💬 WhatsApp</a>
-          <a class="email" href="mailto:mybakery@example.com">📧 Email</a>
-        </div>
-      </div>
-
-      <div class="contact-right">
-        <div class="items-mini">
-          <div class="mini"><img src="https://images.unsplash.com/photo-1606312619349-9c84f47d3df7?auto=format&fit=crop&w=400&q=80" alt=""><p>Cakes</p></div>
-          <div class="mini"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt=""><p>Donuts</p></div>
-          <div class="mini"><img src="https://images.unsplash.com/photo-1617196037305-5f35277ebc63?auto=format&fit=crop&w=400&q=80" alt=""><p>Cupcakes</p></div>
-          <div class="mini"><img src="https://images.unsplash.com/photo-1603079842301-b4e49963cf3d?auto=format&fit=crop&w=400&q=80" alt=""><p>Pizza</p></div>
-          <div class="mini"><img src="https://images.unsplash.com/photo-1620912189865-fbe9caa3f3b5?auto=format&fit=crop&w=400&q=80" alt=""><p>Brownies</p></div>
-          <div class="mini"><img src="https://images.unsplash.com/photo-1623851019530-bc9b89c0ee1d?auto=format&fit=crop&w=400&q=80" alt=""><p>Cookies</p></div>
-        </div>
-      </div>
-    </div>
+  <section id="contact" class="contact">
+    <h2>Place Your Order</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Item</option>
+        <option>Chocolate Cake</option>
+        <option>Donuts</option>
+        <option>Pizza</option>
+        <option>Brownies</option>
+        <option>Marble Cake</option>
+        <option>Cookies</option>
+        <option>Cupcakes</option>
+      </select>
+      <textarea placeholder="Your Address" rows="4" required></textarea>
+      <button type="submit">Order Now</button>
+    </form>
   </section>
 
-  <footer>© Cutie Bakery • Fresh & Homemade</footer>
+  <footer>
+    <p>📞 +91 9876543210 | ✉️ cutiebakery@gmail.com</p>
+    <p>© 2025 Cutie Bakery. All rights reserved.</p>
+  </footer>
 
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
+
+  <script>
+    // Scroll animation
+    const cards = document.querySelectorAll('.card');
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.9;
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < trigger) {
+          card.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
 </body>
 </html>
