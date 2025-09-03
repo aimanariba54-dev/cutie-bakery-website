@@ -5,239 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cutie Bakery</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff8f5;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(90deg, #ff6b6b, #ffb347);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1607083206173-56a8f8f7dc85?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 10px #000;
-      font-size: 42px;
-      font-weight: bold;
-      background-attachment: fixed; /* parallax */
-    }
-    .offer {
-      background: #ff6b6b;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0% {opacity: 1;}
-      50% {opacity: 0.6;}
-      100% {opacity: 1;}
-    }
-    .products {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .products h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      color: #ff6b6b;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease, box-shadow 0.3s;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease;
-    }
-    .card:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card h3 {
-      margin: 15px 0 5px;
-      color: #ff6b6b;
-    }
-    .card p {
-      margin-bottom: 15px;
-    }
-    .contact {
-      background: #ffe5e0;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .contact h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #ff6b6b;
-    }
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea, select, button {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-    input, textarea, select {
-      border: 1px solid #ccc;
-    }
-    button {
-      background: linear-gradient(90deg, #ff6b6b, #ffb347);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      opacity: 0.9;
-    }
-    footer {
-      background: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    /* Floating WhatsApp */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 28px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
+    body {margin:0;font-family:sans-serif;background:#fff8f5;text-align:center;}
+    header {background:linear-gradient(90deg,#ff6b6b,#ffb347);padding:15px;color:#fff;font-size:24px;}
+    .hero {background:url('https://images.unsplash.com/photo-1607083206173-56a8f8f7dc85?auto=format&fit=crop&w=1600&q=80') center/cover;height:50vh;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;font-weight:bold;text-shadow:2px 2px 5px #000;}
+    .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;padding:20px;}
+    .card {background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);overflow:hidden;transition:0.3s;}
+    .card:hover{transform:scale(1.05);}
+    .card img{width:100%;height:160px;object-fit:cover;}
+    h3{margin:10px 0;color:#ff6b6b;}
+    .contact{background:#ffe5e0;padding:30px;}
+    input,button{padding:10px;margin:8px;width:90%;max-width:300px;border-radius:6px;border:1px solid #ccc;}
+    button{background:linear-gradient(90deg,#ff6b6b,#ffb347);color:#fff;font-weight:bold;border:none;cursor:pointer;}
+    footer{background:#333;color:#fff;padding:10px;font-size:14px;}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Cutie Bakery</h1>
-    <nav>
-      <a href="#products">Menu</a>
-      <a href="#contact">Order</a>
-    </nav>
-  </header>
+  <header>Cutie Bakery 🍩</header>
+  <section class="hero">Fresh • Tasty • Homemade</section>
 
-  <section class="hero">
-    Fresh • Delicious • Homemade
-  </section>
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1603022201853-6e96e6a509a2?auto=format&fit=crop&w=800&q=80"><h3>Chocolate Cake</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"><h3>Donuts</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"><h3>Pizza</h3></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=800&q=80"><h3>Brownies</h3></div>
+  </div>
 
-  <div class="offer">🎉 Special Offer: 50% OFF on Cupcakes Today Only!</div>
-
-  <section id="products" class="products">
-    <h2>Our Specials</h2>
-    <div class="grid">
-      <div class="card"><img src="https://images.unsplash.com/photo-1603022201853-6e96e6a509a2?auto=format&fit=crop&w=800&q=80"><h3>Chocolate Cake</h3><p>₹499</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"><h3>Donuts</h3><p>₹199</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"><h3>Pizza</h3><p>₹299</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=800&q=80"><h3>Brownies</h3><p>₹249</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"><h3>Marble Cake</h3><p>₹399</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=800&q=80"><h3>Cookies</h3><p>₹149</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1621263764928-4b91bdf232c0?auto=format&fit=crop&w=800&q=80"><h3>Cupcakes</h3><p>₹199</p></div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
+  <section class="contact">
     <h2>Place Your Order</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <select required>
-        <option value="">Select Item</option>
-        <option>Chocolate Cake</option>
-        <option>Donuts</option>
-        <option>Pizza</option>
-        <option>Brownies</option>
-        <option>Marble Cake</option>
-        <option>Cookies</option>
-        <option>Cupcakes</option>
-      </select>
-      <textarea placeholder="Your Address" rows="4" required></textarea>
-      <button type="submit">Order Now</button>
-    </form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="tel" placeholder="Phone Number"><br>
+    <button>Order Now</button>
   </section>
 
-  <footer>
-    <p>📞 +91 9876543210 | ✉️ cutiebakery@gmail.com</p>
-    <p>© 2025 Cutie Bakery. All rights reserved.</p>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
-
-  <script>
-    // Scroll animation
-    const cards = document.querySelectorAll('.card');
-    const showOnScroll = () => {
-      const trigger = window.innerHeight * 0.9;
-      cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < trigger) {
-          card.classList.add('show');
-        }
-      });
-    };
-    window.addEventListener('scroll', showOnScroll);
-    showOnScroll();
-  </script>
+  <footer>📞 +91 9876543210 | ✉️ cutiebakery@gmail.com</footer>
 </body>
 </html>
