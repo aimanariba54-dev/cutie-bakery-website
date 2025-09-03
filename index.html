@@ -1,130 +1,236 @@
-<style>
-  #contact {
-    background: linear-gradient(135deg, #ffe6f0, #fff8e6);
-    padding: 70px 20px;
-    text-align: center;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    font-family: 'Poppins', sans-serif;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cutie Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#fffafc;color:#333;line-height:1.4}
 
-  #contact h2 {
-    font-size: 2.8rem;
-    color: #ff3c78;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px #fff;
-  }
+    /* NAV */
+    nav{
+      background:linear-gradient(90deg,#ff6384,#ff3c78);
+      color:#fff;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08)
+    }
+    nav .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.2rem}
+    nav ul{list-style:none;display:flex;gap:18px}
+    nav a{color:#fff;text-decoration:none;font-weight:600}
 
-  .items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 40px;
-  }
+    /* HERO */
+    .hero{
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.06)
+    }
+    .hero .wrap{max-width:980px;padding:20px}
+    .hero h1{font-size:2.6rem;margin-bottom:12px;text-shadow:0 6px 18px rgba(0,0,0,0.35)}
+    .hero p{font-size:1.05rem;opacity:0.95}
 
-  .item {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+    /* PRODUCTS */
+    #products{max-width:1200px;margin:50px auto;padding:0 18px}
+    #products h2{text-align:center;color:#ff3c78;font-size:2rem;margin-bottom:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+    .card{
+      background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(12,12,30,0.06);
+      transition:transform .35s ease,box-shadow .35s ease;
+      display:flex;flex-direction:column;
+    }
+    .card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(12,12,30,0.12)}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+    .card-body h3{font-size:1.2rem;margin-bottom:8px;color:#222}
+    .card-body p{color:#666;font-size:0.98rem;margin-bottom:12px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .price{font-weight:700;color:#ff3c78}
+    .btn-order{
+      background:linear-gradient(90deg,#ff6384,#ff3c78);color:#fff;padding:8px 12px;border-radius:10px;
+      text-decoration:none;font-weight:700;display:inline-block;
+      box-shadow:0 6px 18px rgba(255,60,120,0.18)
+    }
 
-  .item:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-  }
+    /* CONTACT */
+    #contact{background:linear-gradient(135deg,#fff0f5,#fff8e6);padding:60px 20px;margin:40px auto;border-radius:16px;max-width:1000px}
+    #contact .wrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+    .contact-left{flex:1;min-width:260px}
+    .contact-left h2{color:#ff3c78;font-size:1.8rem;margin-bottom:10px}
+    .contact-left p{color:#444;margin-bottom:8px;font-weight:600}
+    .contact-actions{margin-top:12px}
+    .contact-actions a{display:inline-block;margin-right:12px;padding:10px 18px;border-radius:999px;text-decoration:none;color:#fff;font-weight:700}
+    .whatsapp{background:linear-gradient(90deg,#25D366,#128C7E)}
+    .email{background:linear-gradient(90deg,#ff3c78,#e23366)}
 
-  .item img {
-    width: 90px;
-    margin-bottom: 10px;
-  }
+    .contact-right{flex:1;min-width:260px}
+    .items-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px}
+    .mini{background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center}
+    .mini img{width:70px;height:70px;object-fit:contain;margin-bottom:8px}
+    .mini p{font-weight:600;color:#444}
 
-  .item p {
-    font-size: 1.2rem;
-    color: #444;
-    font-weight: 600;
-  }
+    /* FOOTER */
+    footer{text-align:center;padding:18px;color:#777;font-size:.95rem;margin-top:30px}
 
-  .contact-info {
-    font-size: 1.3rem;
-    color: #333;
-    margin: 8px 0;
-  }
+    /* Responsive tweaks */
+    @media (max-width:640px){
+      .hero h1{font-size:1.6rem}
+      nav ul{display:none}
+      .contact-left,.contact-right{width:100%}
+      .card img{height:150px}
+    }
+  </style>
+</head>
+<body>
 
-  .contact-buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
-    transition: 0.3s;
-  }
+  <!-- NAV -->
+  <nav>
+    <div class="brand">🍰 <span>Cutie Bakery</span></div>
+    <ul>
+      <li><a href="#products">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  .whatsapp {
-    background: #25D366;
-  }
-
-  .whatsapp:hover {
-    background: #1ebc5c;
-  }
-
-  .email {
-    background: #ff3c78;
-  }
-
-  .email:hover {
-    background: #e23366;
-  }
-</style>
-
-<section id="contact">
-  <h2>✨ Contact Cutie Bakery ✨</h2>
-
-  <!-- Product Grid -->
-  <div class="items-grid">
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/cake.png" alt="cake">
-      <p>Cakes</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Freshly Baked Treats — Cakes, Donuts & More</h1>
+      <p>Order custom cakes, cupcakes, brownies and more. Delivery & pickup available.</p>
     </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/donut.png" alt="donut">
-      <p>Donuts</p>
-    </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/cupcake.png" alt="cupcake">
-      <p>Cupcakes</p>
-    </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/pizza.png" alt="pizza">
-      <p>Pizza</p>
-    </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/brownie.png" alt="brownie">
-      <p>Brownies</p>
-    </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/birthday-cake.png" alt="marble cake">
-      <p>Marble Cake</p>
-    </div>
-    <div class="item">
-      <img src="https://img.icons8.com/color/96/cookie.png" alt="cookies">
-      <p>Cookies</p>
-    </div>
-  </div>
+  </section>
 
-  <!-- Contact Info -->
-  <p class="contact-info">📞 +91 91234 56789</p>
-  <p class="contact-info">✉️ mybakery@example.com</p>
+  <!-- PRODUCTS -->
+  <section id="products">
+    <h2>Our Specials</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606312619349-9c84f47d3df7?auto=format&fit=crop&w=1200&q=80" alt="Cake">
+        <div class="card-body">
+          <div>
+            <h3>Cakes</h3>
+            <p>Handmade celebration cakes with fresh cream & toppings.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹299</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
 
-  <!-- Buttons -->
-  <div class="contact-buttons">
-    <a href="https://wa.me/919123456789" target="_blank" class="whatsapp">💬 WhatsApp Us</a>
-    <a href="mailto:mybakery@example.com" target="_blank" class="email">📧 Email Us</a>
-  </div>
-</section>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Donuts">
+        <div class="card-body">
+          <div>
+            <h3>Donuts</h3>
+            <p>Soft glazed & filled donuts — perfect for snacking.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹99</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1617196037305-5f35277ebc63?auto=format&fit=crop&w=1200&q=80" alt="Cupcakes">
+        <div class="card-body">
+          <div>
+            <h3>Cupcakes</h3>
+            <p>Mini cupcakes with colorful frostings.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹149</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603079842301-b4e49963cf3d?auto=format&fit=crop&w=1200&q=80" alt="Pizza">
+        <div class="card-body">
+          <div>
+            <h3>Pizza</h3>
+            <p>Small gourmet pizzas topped with fresh ingredients.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹199</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1620912189865-fbe9caa3f3b5?auto=format&fit=crop&w=1200&q=80" alt="Brownies">
+        <div class="card-body">
+          <div>
+            <h3>Brownies</h3>
+            <p>Fudgy brownies with chocolate chips.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹129</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600986604330-6fbcf78fd6d5?auto=format&fit=crop&w=1200&q=80" alt="Marble Cake">
+        <div class="card-body">
+          <div>
+            <h3>Marble Cake</h3>
+            <p>Classic marble cake with rich swirls.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹349</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1623851019530-bc9b89c0ee1d?auto=format&fit=crop&w=1200&q=80" alt="Cookies">
+        <div class="card-body">
+          <div>
+            <h3>Cookies</h3>
+            <p>Crunchy cookies baked fresh daily.</p>
+          </div>
+          <div class="price-row">
+            <div class="price">₹79</div>
+            <a class="btn-order" href="mailto:mybakery@example.com">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-left">
+        <h2>Contact Us</h2>
+        <p class="contact-info">📞 +91 91234 56789</p>
+        <p class="contact-info">✉️ mybakery@example.com</p>
+        <div class="contact-actions">
+          <a class="whatsapp" href="https://wa.me/919123456789" target="_blank">💬 WhatsApp</a>
+          <a class="email" href="mailto:mybakery@example.com">📧 Email</a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="items-mini">
+          <div class="mini"><img src="https://images.unsplash.com/photo-1606312619349-9c84f47d3df7?auto=format&fit=crop&w=400&q=80" alt=""><p>Cakes</p></div>
+          <div class="mini"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt=""><p>Donuts</p></div>
+          <div class="mini"><img src="https://images.unsplash.com/photo-1617196037305-5f35277ebc63?auto=format&fit=crop&w=400&q=80" alt=""><p>Cupcakes</p></div>
+          <div class="mini"><img src="https://images.unsplash.com/photo-1603079842301-b4e49963cf3d?auto=format&fit=crop&w=400&q=80" alt=""><p>Pizza</p></div>
+          <div class="mini"><img src="https://images.unsplash.com/photo-1620912189865-fbe9caa3f3b5?auto=format&fit=crop&w=400&q=80" alt=""><p>Brownies</p></div>
+          <div class="mini"><img src="https://images.unsplash.com/photo-1623851019530-bc9b89c0ee1d?auto=format&fit=crop&w=400&q=80" alt=""><p>Cookies</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© Cutie Bakery • Fresh & Homemade</footer>
+
+</body>
+</html>
