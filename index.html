@@ -1,56 +1,130 @@
-<section id="contact" style="background: linear-gradient(135deg, #fff0f5, #fdf5e6); padding: 60px 20px; text-align: center; border-radius: 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.1);">
-  
-  <h2 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #ff3c78; margin-bottom: 40px;">
-    ✨ Contact Cutie Bakery ✨
-  </h2>
+<style>
+  #contact {
+    background: linear-gradient(135deg, #ffe6f0, #fff8e6);
+    padding: 70px 20px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    font-family: 'Poppins', sans-serif;
+  }
 
-  <!-- Product Icons Grid -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 30px; max-width: 900px; margin: auto; margin-bottom: 40px;">
-    
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/cake.png" alt="cake" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Cakes</p>
+  #contact h2 {
+    font-size: 2.8rem;
+    color: #ff3c78;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px #fff;
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .item {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  }
+
+  .item img {
+    width: 90px;
+    margin-bottom: 10px;
+  }
+
+  .item p {
+    font-size: 1.2rem;
+    color: #444;
+    font-weight: 600;
+  }
+
+  .contact-info {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 8px 0;
+  }
+
+  .contact-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .whatsapp {
+    background: #25D366;
+  }
+
+  .whatsapp:hover {
+    background: #1ebc5c;
+  }
+
+  .email {
+    background: #ff3c78;
+  }
+
+  .email:hover {
+    background: #e23366;
+  }
+</style>
+
+<section id="contact">
+  <h2>✨ Contact Cutie Bakery ✨</h2>
+
+  <!-- Product Grid -->
+  <div class="items-grid">
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/cake.png" alt="cake">
+      <p>Cakes</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/donut.png" alt="donut" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Donuts</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/donut.png" alt="donut">
+      <p>Donuts</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/cupcake.png" alt="cupcake" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Cupcakes</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/cupcake.png" alt="cupcake">
+      <p>Cupcakes</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/pizza.png" alt="pizza" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Pizza</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/pizza.png" alt="pizza">
+      <p>Pizza</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/brownie.png" alt="brownie" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Brownies</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/brownie.png" alt="brownie">
+      <p>Brownies</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/birthday-cake.png" alt="marble cake" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Marble Cake</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/birthday-cake.png" alt="marble cake">
+      <p>Marble Cake</p>
     </div>
-
-    <div style="text-align:center;">
-      <img src="https://img.icons8.com/color/96/cookie.png" alt="cookies" style="width:80px;">
-      <p style="margin-top:10px; font-size:1.1rem; color:#444;">Cookies</p>
+    <div class="item">
+      <img src="https://img.icons8.com/color/96/cookie.png" alt="cookies">
+      <p>Cookies</p>
     </div>
-
   </div>
 
   <!-- Contact Info -->
-  <p style="font-size:1.3rem; color:#333; margin:5px 0;">📞 +91 9322613571</p>
-  <p style="font-size:1.3rem; color:#333; margin:5px 0;">✉️ aimanariba54@gmail.com</p>
+  <p class="contact-info">📞 +91 91234 56789</p>
+  <p class="contact-info">✉️ mybakery@example.com</p>
 
   <!-- Buttons -->
-  <div style="margin-top: 20px;">
-    <a href="https://wa.me/919123456789" target="_blank" style="background:#25D366; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-size:1.1rem; margin:5px;">WhatsApp Us</a>
-    <a href="mailto:mybakery@example.com" target="_blank" style="background:#ff3c78; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-size:1.1rem; margin:5px;">Email Us</a>
+  <div class="contact-buttons">
+    <a href="https://wa.me/919123456789" target="_blank" class="whatsapp">💬 WhatsApp Us</a>
+    <a href="mailto:mybakery@example.com" target="_blank" class="email">📧 Email Us</a>
   </div>
 </section>
