@@ -1,131 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Delicious Bakery</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (For Social Media Icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Body */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ffe5ec, #d0ebff);
-      color: #333;
+    :root{
+      --peach:#ffe9e6;
+      --red:#ff4d6d;
+      --blue:#0077b6;
+      --muted:#6b6b6b;
+      --card-bg:#ffffff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,var(--peach),#fff);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
     }
 
-    /* Navbar */
-    nav {
-      background: #ff4d6d;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* NAVBAR */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,77,109,0.98);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 20px; gap:10px;
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
     }
-    .logo {
-      font-size: 24px;
-      font-family: 'Lobster', cursive;
-      color: white;
+    .logo{
+      display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none;
+      font-weight:600; font-size:20px;
     }
-    .menu a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: 0.3s;
+    .logo .icon{font-size:26px}
+    .nav .links{
+      display:flex; gap:14px; align-items:center;
     }
-    .menu a:hover {
-      background: #ff99ac;
-      padding: 8px 12px;
-      border-radius: 8px;
+    .nav a{ color:#fff; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:8px; }
+    .nav a:hover{ background:rgba(255,255,255,0.12) }
+
+    /* mobile menu button */
+    .menu-btn{ display:none; background:transparent; border:0; color:#fff; font-size:20px; }
+
+    /* HERO */
+    .hero{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      gap:20px; padding:60px 6%;
+    }
+    .hero .left{ max-width:640px; }
+    .hero h1{
+      font-family:'Lobster',cursive; font-size:48px; margin:0 0 10px; color:var(--red);
+    }
+    .hero p{ margin:0 0 18px; color:var(--muted); font-size:18px; line-height:1.5; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn{
+      background:var(--blue); color:#fff; padding:12px 20px; border-radius:30px; border:0;
+      cursor:pointer; font-weight:700; text-decoration:none;
+    }
+    .btn:hover{ transform:translateY(-3px); transition:.18s; background:var(--red) }
+
+    .hero .right{
+      min-width:260px; max-width:420px;
+      border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    .hero .right img{ width:100%; display:block; }
+
+    /* SECTIONS */
+    section{ padding:36px 6% }
+    h2{ text-align:center; font-family:'Lobster'; color:var(--red); font-size:32px; margin-bottom:18px; }
+
+    /* MENU CARDS */
+    .menu-grid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background:var(--card-bg); border-radius:var(--radius); padding:14px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.06); text-align:center;
+      display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .card img{ width:100%; border-radius:10px; height:150px; object-fit:cover; }
+    .card h3{ color:var(--blue); margin:12px 0 6px; }
+    .price{ font-weight:700; color:var(--red); font-size:18px; margin-bottom:10px; }
+    .card .order{
+      margin-top:10px;
+      text-decoration:none; display:inline-block;
+      background:var(--red); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h1 {
-      font-size: 50px;
-      color: #ff2e63;
-      font-family: 'Lobster', cursive;
-    }
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    .hero button {
-      background: #ff4d6d;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    .hero button:hover {
-      background: #ff99ac;
-      transform: scale(1.05);
-    }
+    /* GALLERY */
+    .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+    .gallery img{ width:100%; height:140px; object-fit:cover; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06) }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #ff4d6d;
-      color: white;
-      margin-top: 40px;
+    /* TESTIMONIALS */
+    .test-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .testimonial{ background:#fff; padding:16px; border-radius:12px; box-shadow:0 6px 14px rgba(0,0,0,0.06) }
+    .testimonial p{ color:var(--muted); font-size:15px }
+    .person{ margin-top:12px; font-weight:700; color:var(--blue); }
+
+    /* ABOUT */
+    .about .box{ background:linear-gradient(180deg,#fff,#fff); padding:20px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.04); max-width:900px; margin:auto; color:var(--muted) }
+
+    /* CONTACT */
+    .contact .wrap{ display:flex; gap:20px; flex-wrap:wrap; justify-content:center; align-items:flex-start }
+    .contact form{ background:#fff; padding:18px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.06); width:420px; max-width:100% }
+    .contact input, .contact textarea{ width:100%; padding:10px 12px; margin:8px 0; border:2px solid #f2d6d9; border-radius:8px; font-size:15px }
+    .contact .wa-btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:var(--red); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700 }
+
+    /* FOOTER */
+    footer{ background:var(--red); color:#fff; padding:18px 6%; text-align:center; margin-top:30px }
+    .social{ margin-top:8px; display:flex; gap:12px; justify-content:center; align-items:center; }
+    .social a{ color:#fff; font-size:18px; text-decoration:none; padding:8px; border-radius:8px }
+    .social a:hover{ background:rgba(255,255,255,0.08) }
+
+    /* RESPONSIVE */
+    @media(max-width:880px){
+      .hero{ padding:36px 5% }
+      .hero h1{ font-size:36px }
+      .menu-btn{ display:block }
+      .nav .links{ display:none }
+      .nav.open .links{ display:flex; flex-direction:column; position:absolute; left:12px; right:12px; top:58px; background:var(--red); padding:12px; border-radius:10px }
+      .hero .right{ order:2; width:100% }
     }
-    .social-icons a {
-      color: white;
-      margin: 0 10px;
-      font-size: 20px;
-      transition: 0.3s;
-    }
-    .social-icons a:hover {
-      color: #ffe5ec;
+    @media(max-width:520px){
+      .hero{ padding:26px 4% }
+      .hero h1{ font-size:30px }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">🍩 Delicious Bakery</div>
-    <div class="menu">
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo"><span class="icon">🍰</span><span>Delicious Bakery</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa fa-bars"></i></button>
+
+    <nav class="links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero" id="home">
-    <h1>Welcome to Delicious Bakery</h1>
-    <p>Fresh cakes, cupcakes, cookies & more – made with love ❤️</p>
-    <a href="https://wa.me/919876543210" target="_blank">
-      <button><i class="fab fa-whatsapp"></i> Order Now on WhatsApp</button>
-    </a>
+    <div class="left">
+      <h1>Delicious Bakery — Fresh & Homemade</h1>
+      <p>Fresh cakes, cupcakes, cookies and more — baked daily with love. Place orders for birthdays, weddings, or just because. Fast delivery and beautiful custom designs.</p>
+
+      <div class="cta">
+        <!-- Replace the number with your number (country code + number, no +). Example: 919876543210 -->
+        <a class="btn" href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        <a class="btn" href="#menu">See Menu</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <!-- Hero image (replace with your own bakery photo if you have) -->
+      <img src="https://source.unsplash.com/800x600/?bakery,cake" alt="Bakery hero">
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- MENU -->
+  <section id="menu">
+    <h2>Our Bestsellers</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?chocolate,cake" alt="Chocolate Cake">
+        <div>
+          <h3>Chocolate Fudge Cake</h3>
+          <div class="price">₹599</div>
+          <p>Rich chocolate layers, ganache & fresh berries.</p>
+          <a class="order" href="https://wa.me/919876543210" target="_blank">Order</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?cupcake" alt="Cupcake">
+        <div>
+          <h3>Strawberry Cupcakes</h3>
+          <div class="price">₹99</div>
+          <p>Soft, fruity cupcakes topped with buttercream.</p>
+          <a class="order" href="https://wa.me/919876543210" target="_blank">Order</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?donut" alt="Donut">
+        <div>
+          <h3>Glazed Donuts</h3>
+          <div class="price">₹129</div>
+          <p>Light and fluffy donuts with sweet glaze.</p>
+          <a class="order" href="https://wa.me/919876543210" target="_blank">Order</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?brownie" alt="Brownie">
+        <div>
+          <h3>Chocolate Brownie</h3>
+          <div class="price">₹149</div>
+          <p>Fudgy brownies with chocolate chips.</p>
+          <a class="order" href="https://wa.me/919876543210" target="_blank">Order</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery" aria-hidden="false">
+      <img src="https://source.unsplash.com/600x400/?cake,decor" alt="cake1">
+      <img src="https://source.unsplash.com/600x400/?cupcakes,colorful" alt="cake2">
+      <img src="https://source.unsplash.com/600x400/?pastry" alt="cake3">
+      <img src="https://source.unsplash.com/600x400/?birthday,cake" alt="cake4">
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>What Customers Say</h2>
+    <div class="test-grid">
+      <div class="testimonial">
+        <p>"The birthday cake was stunning — everyone loved the taste and design!"</p>
+        <div class="person">— Ayesha R.</div>
+      </div>
+      <div class="testimonial">
+        <p>"Fast delivery and soft cupcakes. Highly recommended!"</p>
+        <div class="person">— Sanjay K.</div>
+      </div>
+      <div class="testimonial">
+        <p>"Amazing customization — they made exactly what I wanted."</p>
+        <div class="person">— Meera P.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <div class="box">
+        <p>Delicious Bakery is a family-run bakery that has been serving fresh cakes and sweets since 2020. We use premium ingredients and handcraft each item with care. Whether you need a custom wedding cake or daily treats, we deliver taste and smiles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact & Orders</h2>
+    <div class="contact">
+      <div class="wrap">
+        <div>
+          <a class="wa-btn" href="https://wa.me/919876543210" target="_blank" style="display:inline-flex;align-items:center;gap:8px;">
+            <i class="fab fa-whatsapp" style="font-size:20px"></i>
+            Chat on WhatsApp
+          </a>
+
+          <p style="color:var(--muted); margin-top:12px">Or send us a message using the form below — we'll reply soon!</p>
+        </div>
+
+        <form id="contactForm" onsubmit="return submitForm(event)">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <textarea id="message" rows="4" placeholder="Your message / order details"></textarea>
+          <button type="submit" class="wa-btn" style="background:var(--blue)">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Delicious Bakery | Designed with ❤️</p>
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div>© <span id="year"></span> Delicious Bakery — All rights reserved</div>
+    <div class="social" aria-hidden="false" style="margin-top:10px;">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
 
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', ()=> nav.classList.toggle('open'));
+
+    // smooth scrolling for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+          if(nav.classList.contains('open')) nav.classList.remove('open');
+        }
+      });
+    });
+
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple contact handler (demo)
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // fallback: open mail client (replace with server or service if available)
+      const subject = encodeURIComponent('Order / Message from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+
+      // optionally show small alert
+      setTimeout(()=> alert('Your message is opened in mail client. You can also order via WhatsApp.'), 300);
+      return false;
+    }
+  </script>
 </body>
 </html>
