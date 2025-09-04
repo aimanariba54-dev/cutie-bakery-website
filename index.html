@@ -141,5 +141,234 @@ button:hover {
   transform: scale(1.1);
 }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cutie Bakery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe5ec, #ffffff);
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background: #ff4d6d;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #0077b6;
+      border-radius: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #ffccd5, #ffe5ec);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+      color: #ff2e63;
+    }
+    .hero p {
+      font-size: 18px;
+      margin: 20px 0;
+      color: #444;
+    }
+    .hero button {
+      background: #0077b6;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #ff4d6d;
+      transform: scale(1.1);
+    }
+
+    /* Section Headings */
+    h2 {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      color: #ff2e63;
+      margin-top: 40px;
+    }
+
+    /* Menu Cards */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .card {
+      background: #fff;
+      width: 250px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    .card h3 {
+      margin: 10px 0;
+      color: #0077b6;
+    }
+    .card p {
+      color: #444;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* About Section */
+    .about {
+      background: #ffe5ec;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 16px;
+      color: #444;
+    }
+
+    /* Contact Form */
+    .contact {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact input, .contact textarea {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ff4d6d;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    .contact button {
+      background: #ff4d6d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .contact button:hover {
+      background: #0077b6;
+    }
+
+    /* Footer */
+    footer {
+      background: #ff4d6d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to Cutie Bakery</h1>
+    <p>Fresh cakes, cupcakes, cookies & more – made with love ❤️</p>
+    <button>Order Now</button>
+  </section>
+
+  <!-- Menu Section -->
+  <h2 id="menu">Our Menu</h2>
+  <div class="menu">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?cake" alt="Cake">
+      <h3>Chocolate Cake</h3>
+      <p>₹499</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?cupcake" alt="Cupcake">
+      <h3>Strawberry Cupcake</h3>
+      <p>₹99</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?donut" alt="Donut">
+      <h3>Glazed Donut</h3>
+      <p>₹149</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?brownie" alt="Brownie">
+      <h3>Chocolate Brownie</h3>
+      <p>₹199</p>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>At Cutie Bakery, we believe every bite should bring a smile 😊. 
+    Our cakes and desserts are freshly baked daily with the finest ingredients. 
+    Whether it's a birthday, wedding, or just a sweet craving, we’ve got you covered!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea rows="5" placeholder="Your Message"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Cutie Bakery | Designed with ❤️</p>
+  </footer>
+
+</body>
+</html>
+
+
 
 
